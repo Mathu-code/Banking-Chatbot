@@ -1,0 +1,10 @@
+# Virtual environment
+.env/
+venv/
+**/__pycache__/
+*.py[cod]
+
+# IDE files
+.idea/
+*.swp
+*.swo
