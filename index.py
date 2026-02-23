@@ -1,3 +1,4 @@
+import os
 import re
 import random
 from flask import Flask, request, jsonify
@@ -11,7 +12,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Connect to MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+mongo_uri = os.environ.get("MONGO_URI", "mongodb://localhost:27017/")
+client = MongoClient(mongo_uri)
 db = client["chatbot"]
 faq_collection = db["chatbot"]
 
